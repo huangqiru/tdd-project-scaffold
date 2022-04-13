@@ -11,6 +11,7 @@ public class BackstagePass extends Goods {
     @Override
     protected Integer calculateCurrentQuality(Integer overDays, Integer changeValueOneDay) {
         int gapDay = super.sellIn - overDays;
+
         if (gapDay < 0) {
             return quality = 0;
         }
@@ -21,8 +22,7 @@ public class BackstagePass extends Goods {
             quality += (sellIn - 10) * changeValueOneDay + (5 * 2) + (overDays - (sellIn - 5)) * 3;
         }
 
-        adjustQualityLessThan0OrGreaterThan50();
-
+        super.adjustQualityLessThan0OrGreaterThan50();
         return quality;
     }
 }
