@@ -47,4 +47,10 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
+*.lock
+*.bin
+*.css
+*.html
+*.idx
+*.js
 
