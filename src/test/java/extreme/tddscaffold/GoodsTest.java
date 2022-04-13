@@ -40,7 +40,7 @@ public class GoodsTest {
     @Test
     void should_return_10_when_calculate_given_Goods_overDay_is_10() {
         Integer quality = goods.calculateCurrentQuality(10, -1);
-        Assertions.assertEquals(19, quality);
+        Assertions.assertEquals(10, quality);
     }
 
     @Test

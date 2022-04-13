@@ -20,13 +20,13 @@ public class Goods {
         if (sellIn < overDays) {
             quality += (sellIn * changeValueOneDay + (overDays - sellIn) * 2 * changeValueOneDay);
         }
-        if (quality < 0 ) {
-            quality = 0;
-        }
-        if (quality > 50) {
-            quality = 50;
-        }
+        adjustQualityLessThan0OrGreaterThan50();
         return quality;
+    }
+
+    private void adjustQualityLessThan0OrGreaterThan50() {
+        quality = quality < 0 ? 0 : quality;
+        quality = quality > 50 ? 50 : quality;
     }
 
     public Integer getSellIn() {
