@@ -8,11 +8,13 @@ public class GoodsTest {
 
     private Goods goods;
     private AgedBrie agedBrie;
+    private Sulfuras sulfuras;
 
     @BeforeEach
     public void init() {
         goods = new Goods(10, 20);
         agedBrie = new AgedBrie(0, 20);
+        sulfuras = new Sulfuras(0, 20);
     }
 
     @Test
@@ -62,4 +64,22 @@ public class GoodsTest {
         Integer quality = agedBrie.calculateCurrentQuality(31, 1);
         Assertions.assertEquals(50, quality);
     }
+
+    @Test
+    void should_return_20_when_calculate_given_AgedBrie_overDay_is_1() {
+        Integer quality = sulfuras.calculateCurrentQuality(1, 0);
+        Assertions.assertEquals(20, quality);
+    }
+
+    @Test
+    void should_return_20_when_calculate_given_AgedBrie_overDay_is_20() {
+        Integer quality = sulfuras.calculateCurrentQuality(20, 0);
+        Assertions.assertEquals(20, quality);
+    }
+    @Test
+    void should_return_20_when_calculate_given_AgedBrie_overDay_is_40() {
+        Integer quality = sulfuras.calculateCurrentQuality(40, 0);
+        Assertions.assertEquals(20, quality);
+    }
+
 }
