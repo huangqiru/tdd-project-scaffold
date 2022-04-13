@@ -1,9 +1,10 @@
 package extreme.tddscaffold;
 
+
 public class Goods {
 
-    private Integer sellIn;
-    private Integer quality;
+    protected Integer sellIn;
+    protected Integer quality;
 
     public Goods() {
     }
@@ -17,14 +18,14 @@ public class Goods {
         if (sellIn >= overDays) {
             quality += overDays * changeValueOneDay;
         }
-        if (sellIn < overDays) {
+        if (sellIn < overDays ) {
             quality += (sellIn * changeValueOneDay + (overDays - sellIn) * 2 * changeValueOneDay);
         }
         adjustQualityLessThan0OrGreaterThan50();
         return quality;
     }
 
-    private void adjustQualityLessThan0OrGreaterThan50() {
+    protected void adjustQualityLessThan0OrGreaterThan50() {
         quality = quality < 0 ? 0 : quality;
         quality = quality > 50 ? 50 : quality;
     }
