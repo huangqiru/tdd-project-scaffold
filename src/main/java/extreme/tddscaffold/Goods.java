@@ -15,12 +15,17 @@ public class Goods {
     }
 
     protected Integer calculateCurrentQuality(Integer overDays, Integer changeValueOneDay) {
+
         if (sellIn >= overDays) {
             quality += overDays * changeValueOneDay;
         }
+
         if (sellIn < overDays ) {
-            quality += (sellIn * changeValueOneDay + (overDays - sellIn) * 2 * changeValueOneDay);
+            int qualityOfInSellInPart = sellIn * changeValueOneDay;
+            int qualityOfOverSellInPart = (overDays - sellIn) * 2 * changeValueOneDay;
+            quality += qualityOfInSellInPart + qualityOfOverSellInPart;
         }
+
         adjustQualityLessThan0OrGreaterThan50();
         return quality;
     }
