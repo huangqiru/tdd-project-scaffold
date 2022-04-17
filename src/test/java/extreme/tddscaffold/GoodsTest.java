@@ -3,6 +3,7 @@ package extreme.tddscaffold;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 /**
  * Tasking
  * 普通商品,价值20, 保质期10天, 每天贬值1
@@ -11,17 +12,17 @@ import org.junit.jupiter.api.Test;
  * 3.Given 过去11天 超过保质期, when 计算当前价值, then输出8
  * 4.Given 过去15天 超过保质期, when 计算当前价值, then输出0
  * 5.Given 过去16天 超过保质期, when 计算当前价值, then输出0
- *
+ * <p>
  * AgedBrie, 价值20, 每天增值1, 无保质期概念
  * 1.Given 过去1天  when 计算当前价值, then输出21
  * 2.Given 过去30天  when 计算当前价值, then输出50
  * 3.Given 过去31天  when 计算当前价值, then输出50
- *
+ * <p>
  * Sulfuras, 价值20, 价值不会变动, 无保质期概念
  * 1.Given 过去1天  when 计算当前价值, then输出20
  * 2.Given 过去20天  when 计算当前价值, then输出20
  * 3.Given 过去40天  when 计算当前价值, then输出20
- *
+ * <p>
  * Backstage pass, 价值20,距离演出日20天 每过一天增值1, 距离演出前10天增值2, 距离演出前5天增值3, 过了演出日,价值=0
  * 1.Given 过去1天  when 计算当前价值, then输出21
  * 2.Given 过去10天  when 计算当前价值, then输出30

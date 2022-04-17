@@ -1,6 +1,6 @@
 package extreme.tddscaffold;
 
-public class Sulfuras extends Goods{
+public class Sulfuras extends Goods {
     public Sulfuras() {
     }
 
